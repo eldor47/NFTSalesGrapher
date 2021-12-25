@@ -39,4 +39,4 @@ const sendImage = (message, fileName) => {
         })
 }
 
-client.login('OTI0MDc3NDYzMjIxNDYxMDQy.YcZUMw.pI1ewwG1Qw5n6yc4EC1psAfkAOE')
+client.login('DISCORDAPIKEY')
