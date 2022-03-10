@@ -1,6 +1,6 @@
 var Web3 = require("web3");
-const jsonInterface = require("./SmartContract.json");
-const infraURL = 'https://mainnet.infura.io/v3/INSERTKEYHERE'
+const jsonInterface = require("./ERC721.json");
+const infraURL = 'https://mainnet.infura.io/v3/72f9c4d51d584bba939b58943ec89637'
 
 var web3 = new Web3(infraURL)
 
@@ -13,7 +13,7 @@ const chart = require('chart.js')
 const fs = require('fs');
 
 async function getTransferEvents(address, _fromBlock, _toBlock){
-    var myContract = new Contract(jsonInterface.abi, address);
+    var myContract = new Contract(jsonInterface, address);
     var events = await myContract.getPastEvents('Transfer', {
         filter: {},
         fromBlock: _fromBlock,
@@ -25,8 +25,8 @@ async function getTransferEvents(address, _fromBlock, _toBlock){
 
 // Grabs all Transfer related events from specific abi
 async function getTransferSales(address){
-    const batchSize = 5000
-    const dataPoints = 100
+    const batchSize = 50
+    const dataPoints = 200
     
     var toBlock, fromBlock
     var count = 0

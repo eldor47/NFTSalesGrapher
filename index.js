@@ -20,6 +20,7 @@ client.on('messageCreate', async (message) => {
                 sendImage(message, fileName)
             }).catch(e => {
                 message.reply(e.message)
+                console.log(e)
                 return
             })
         } else {
@@ -39,4 +40,4 @@ const sendImage = (message, fileName) => {
         })
 }
 
-client.login('DISCORD_API_KEY')
+client.login('API_KEY')
